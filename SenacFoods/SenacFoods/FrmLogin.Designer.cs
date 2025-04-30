@@ -30,10 +30,12 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
-            textBox1 = new TextBox();
-            TextSenha = new TextBox();
-            label1 = new Label();
+            btnMinimizar = new Button();
+            btnFechar = new Button();
             buttonEntrar = new Button();
+            TextSenha = new TextBox();
+            btnUser = new TextBox();
+            label1 = new Label();
             label3 = new Label();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -44,34 +46,72 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(368, 671);
+            panel1.Size = new Size(368, 711);
             panel1.TabIndex = 0;
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnMinimizar);
+            panel2.Controls.Add(btnFechar);
             panel2.Controls.Add(buttonEntrar);
             panel2.Controls.Add(TextSenha);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(btnUser);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(401, 0);
+            panel2.Location = new Point(872, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(878, 671);
+            panel2.Size = new Size(878, 711);
             panel2.TabIndex = 1;
             // 
-            // textBox1
+            // btnMinimizar
             // 
-            textBox1.BackColor = Color.Black;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("PMingLiU-ExtB", 17F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(67, 73);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(532, 36);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "USUÁRIO";
+            btnMinimizar.FlatAppearance.BorderSize = 0;
+            btnMinimizar.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnMinimizar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+            btnMinimizar.FlatStyle = FlatStyle.Flat;
+            btnMinimizar.Font = new Font("Segoe UI", 14F);
+            btnMinimizar.ForeColor = Color.Transparent;
+            btnMinimizar.Location = new Point(710, 12);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(76, 58);
+            btnMinimizar.TabIndex = 22;
+            btnMinimizar.Text = "_";
+            btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += button1_Click;
+            // 
+            // btnFechar
+            // 
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnFechar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 255, 192);
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Font = new Font("Segoe UI", 14F);
+            btnFechar.ForeColor = Color.Transparent;
+            btnFechar.Location = new Point(792, 12);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(64, 58);
+            btnFechar.TabIndex = 21;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
+            // 
+            // buttonEntrar
+            // 
+            buttonEntrar.FlatAppearance.BorderColor = Color.WhiteSmoke;
+            buttonEntrar.FlatAppearance.BorderSize = 3;
+            buttonEntrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 255, 192);
+            buttonEntrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
+            buttonEntrar.FlatStyle = FlatStyle.Flat;
+            buttonEntrar.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonEntrar.ForeColor = Color.White;
+            buttonEntrar.Location = new Point(60, 602);
+            buttonEntrar.Name = "buttonEntrar";
+            buttonEntrar.Size = new Size(271, 53);
+            buttonEntrar.TabIndex = 19;
+            buttonEntrar.Text = "Entrar";
+            buttonEntrar.UseVisualStyleBackColor = true;
+            buttonEntrar.Click += buttonEntrar_Click;
             // 
             // TextSenha
             // 
@@ -86,6 +126,19 @@
             TextSenha.TabIndex = 2;
             TextSenha.Text = "SENHA";
             // 
+            // btnUser
+            // 
+            btnUser.BackColor = Color.Black;
+            btnUser.BorderStyle = BorderStyle.None;
+            btnUser.Font = new Font("PMingLiU-ExtB", 17F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUser.ForeColor = Color.White;
+            btnUser.Location = new Point(67, 73);
+            btnUser.Multiline = true;
+            btnUser.Name = "btnUser";
+            btnUser.Size = new Size(532, 36);
+            btnUser.TabIndex = 0;
+            btnUser.Text = "USUÁRIO";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -95,23 +148,6 @@
             label1.Size = new Size(516, 25);
             label1.TabIndex = 18;
             label1.Text = "________________________________________________________________________";
-           
-            // 
-            // buttonEntrar
-            // 
-            buttonEntrar.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 192);
-            buttonEntrar.FlatAppearance.BorderSize = 0;
-            buttonEntrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 255, 192);
-            buttonEntrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(128, 255, 128);
-            buttonEntrar.FlatStyle = FlatStyle.Flat;
-            buttonEntrar.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonEntrar.ForeColor = Color.White;
-            buttonEntrar.Location = new Point(67, 288);
-            buttonEntrar.Name = "buttonEntrar";
-            buttonEntrar.Size = new Size(271, 53);
-            buttonEntrar.TabIndex = 19;
-            buttonEntrar.Text = "Entrar";
-            buttonEntrar.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -128,7 +164,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1279, 671);
+            ClientSize = new Size(1750, 711);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -148,5 +184,8 @@
         private Label label1;
         private Button buttonEntrar;
         private Label label3;
+        private TextBox btnUser;
+        private Button btnFechar;
+        private Button btnMinimizar;
     }
 }
