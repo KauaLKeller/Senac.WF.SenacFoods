@@ -35,6 +35,7 @@
             btnCardapio = new Button();
             btnFechar = new Button();
             btnMinimizar = new Button();
+            lblMensagem = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -140,12 +141,25 @@
             btnMinimizar.UseVisualStyleBackColor = true;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
+            // lblMensagem
+            // 
+            lblMensagem.AutoSize = true;
+            lblMensagem.Font = new Font("Segoe UI Variable Display", 21F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMensagem.ForeColor = Color.White;
+            lblMensagem.Location = new Point(696, 86);
+            lblMensagem.Name = "lblMensagem";
+            lblMensagem.Size = new Size(274, 56);
+            lblMensagem.TabIndex = 24;
+            lblMensagem.Text = "lblMensagem";
+            lblMensagem.Click += lblMensagem_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1771, 720);
+            Controls.Add(lblMensagem);
             Controls.Add(btnMinimizar);
             Controls.Add(btnFechar);
             Controls.Add(groupBox1);
@@ -153,8 +167,10 @@
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += FrmPrincipal_Load;
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -166,5 +182,6 @@
         private Button btnPedido;
         private Button btnFechar;
         private Button btnMinimizar;
+        private Label lblMensagem;
     }
 }

@@ -33,8 +33,8 @@
             btnMinimizar = new Button();
             btnFechar = new Button();
             buttonEntrar = new Button();
-            TextSenha = new TextBox();
-            btnUser = new TextBox();
+            txtSenha = new TextBox();
+            txtUser = new TextBox();
             label1 = new Label();
             label3 = new Label();
             panel2.SuspendLayout();
@@ -54,8 +54,8 @@
             panel2.Controls.Add(btnMinimizar);
             panel2.Controls.Add(btnFechar);
             panel2.Controls.Add(buttonEntrar);
-            panel2.Controls.Add(TextSenha);
-            panel2.Controls.Add(btnUser);
+            panel2.Controls.Add(txtSenha);
+            panel2.Controls.Add(txtUser);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label3);
             panel2.Dock = DockStyle.Right;
@@ -63,6 +63,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(878, 711);
             panel2.TabIndex = 1;
+            panel2.Paint += panel2_Paint;
             // 
             // btnMinimizar
             // 
@@ -78,7 +79,7 @@
             btnMinimizar.TabIndex = 22;
             btnMinimizar.Text = "_";
             btnMinimizar.UseVisualStyleBackColor = true;
-            btnMinimizar.Click += button1_Click;
+            btnMinimizar.Click += btnMinimize_Click;
             // 
             // btnFechar
             // 
@@ -113,31 +114,31 @@
             buttonEntrar.UseVisualStyleBackColor = true;
             buttonEntrar.Click += buttonEntrar_Click;
             // 
-            // TextSenha
+            // txtSenha
             // 
-            TextSenha.BackColor = Color.Black;
-            TextSenha.BorderStyle = BorderStyle.None;
-            TextSenha.Font = new Font("PMingLiU-ExtB", 17F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TextSenha.ForeColor = Color.White;
-            TextSenha.Location = new Point(67, 198);
-            TextSenha.Multiline = true;
-            TextSenha.Name = "TextSenha";
-            TextSenha.Size = new Size(532, 36);
-            TextSenha.TabIndex = 2;
-            TextSenha.Text = "SENHA";
+            txtSenha.BackColor = Color.Black;
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.Font = new Font("PMingLiU-ExtB", 17F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSenha.ForeColor = Color.White;
+            txtSenha.Location = new Point(67, 198);
+            txtSenha.Multiline = true;
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(532, 36);
+            txtSenha.TabIndex = 2;
+            txtSenha.Text = "SENHA";
             // 
-            // btnUser
+            // txtUser
             // 
-            btnUser.BackColor = Color.Black;
-            btnUser.BorderStyle = BorderStyle.None;
-            btnUser.Font = new Font("PMingLiU-ExtB", 17F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUser.ForeColor = Color.White;
-            btnUser.Location = new Point(67, 73);
-            btnUser.Multiline = true;
-            btnUser.Name = "btnUser";
-            btnUser.Size = new Size(532, 36);
-            btnUser.TabIndex = 0;
-            btnUser.Text = "USUÁRIO";
+            txtUser.BackColor = Color.Black;
+            txtUser.BorderStyle = BorderStyle.None;
+            txtUser.Font = new Font("PMingLiU-ExtB", 17F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUser.ForeColor = Color.White;
+            txtUser.Location = new Point(67, 73);
+            txtUser.Multiline = true;
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(532, 36);
+            txtUser.TabIndex = 0;
+            txtUser.Text = "USUÁRIO";
             // 
             // label1
             // 
@@ -170,6 +171,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmLogin";
             Text = "Form1";
+            Load += FrmLogin_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -180,11 +182,11 @@
         private Panel panel1;
         private Panel panel2;
         private TextBox textBox1;
-        private TextBox TextSenha;
+        private TextBox txtSenha;
         private Label label1;
         private Button buttonEntrar;
         private Label label3;
-        private TextBox btnUser;
+        private TextBox txtUser;
         private Button btnFechar;
         private Button btnMinimizar;
     }
